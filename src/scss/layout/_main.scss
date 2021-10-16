@@ -1,0 +1,110 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.container-grid {
+  width: 375px;
+  display: grid;
+
+  .card1 {
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    h2 {
+      color: v.$brightYellow;
+      font-size: 1.8rem;
+    }
+
+    p {
+      color: v.$grayishBlue;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.container-grid {
+  .card2 {
+    background-color: v.$cyan;
+    color: white;
+
+    p {
+      margin-bottom: 3rem;
+    }
+
+    .precio {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      span {
+        font-size: 1.6rem;
+        color: v.$lightGray;
+        font-weight: 400;
+        display: flex;
+      }
+    }
+
+    .botton {
+      background-color: v.$brightYellow;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 1rem;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.container-grid {
+  .card3 {
+    background-color: #4abebd;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    h2 {
+      color: white;
+    }
+
+    ul li {
+      color: v.$lightGray;
+      list-style: none;
+      line-height: 2.5rem;
+      padding: 0;
+    }
+    ul {
+      padding: 0;
+    }
+  }
+}
+
+.container-grid {
+  @include m.tablet {
+    width: 75rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    .card1 {
+      @include m.tablet {
+        grid-column: 1/3;
+      }
+    }
+
+    .card2 {
+      @include m.tablet {
+        border-bottom-left-radius: 1rem;
+      }
+    }
+
+    .card3 {
+      @include m.tablet {
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

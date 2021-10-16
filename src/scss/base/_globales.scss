@@ -1,0 +1,31 @@
+@use "variables" as v;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: v.$lightGray;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: v.$fuente;
+}
+
+h1 {
+  color: v.$cyan;
+  font-weight: 700;
+}
+
+.container-grid .card1,
+.card2,
+.card3 {
+  padding: 2.5rem;
+}
